@@ -1,0 +1,51 @@
+{
+  "name": "@ahincho/nestjs-starter",
+  "version": "1.0.0",
+  "description": "Meta-framework empresarial Nova Platform para TypeScript + NestJS. Punto de entrada único que re-exporta todas las librerías puras, módulos NestJS y provee la factoría de arranque.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "node -e \"const fs=require('fs');fs.rmSync('dist',{recursive:true,force:true})\"",
+    "prepublishOnly": "npm run clean && npm run build",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "jest --run-in-band",
+    "test:cov": "jest --run-in-band --coverage",
+    "docs": "typedoc"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ahincho/nova-nestjs-starter.git"
+  },
+  "keywords": [
+    "nova",
+    "nestjs",
+    "starter",
+    "meta-framework",
+    "typescript"
+  ],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@ahincho/nestjs-mask": "1.0.0",
+    "@ahincho/nestjs-api-standard": "1.0.0",
+    "@ahincho/date-utils": "1.0.0",
+    "@ahincho/mapper-utils": "1.0.0",
+    "@nestjs/core": "~11.1.19",
+    "@nestjs/common": "~11.1.19",
+    "@nestjs/platform-express": "~11.1.19",
+    "reflect-metadata": "~0.2.2",
+    "rxjs": "~7.8.1"
+  },
+  "devDependencies": {
+    "@ahincho/nestjs-parent": "1.0.0"
+  }
+}
